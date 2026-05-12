@@ -2,8 +2,9 @@ document.addEventListener("DOMContentLoaded", cargarComponentes);
 
 function cargarComponentes() {
 
-    let headerPath = "./componentes/header.html";
-    let footerPath = "./componentes/footer.html";
+    let basePath = window.location.hostname === 'jrojo84.github.io' ? '/rojocabani' : '';
+    let headerPath = basePath + "/componentes/header.html";
+    let footerPath = basePath + "/componentes/footer.html";
     let whatsappMessage = "Hola, quiero más información y cotizar un pedido en Rojo Cabani";
     let whatsappUrl = `https://wa.me/51939260711?text=${encodeURIComponent(whatsappMessage)}`;
 
