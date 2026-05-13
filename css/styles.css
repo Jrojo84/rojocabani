@@ -960,7 +960,7 @@ body{
     overflow-y:hidden!important;
     scroll-snap-type:x mandatory!important;
     scroll-behavior:smooth!important;
-    padding:0 0 12px 0!important;
+    padding:0 clamp(15px, calc(50vw - 160px), 200px) 12px clamp(15px, calc(50vw - 160px), 200px)!important;
     min-height:0!important;
     position:relative!important;
 }
