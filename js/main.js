@@ -20,4 +20,13 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 		}
 	});
+
+	// Auto-scroll para home-slider cada 3 segundos
+	const homeSlider = document.querySelector(".home-slider");
+	if (homeSlider) {
+		setInterval(() => {
+			const scrollAmount = Math.max(320, Math.floor(homeSlider.clientWidth * 0.92));
+			homeSlider.scrollBy({ left: scrollAmount, behavior: "smooth" });
+		}, 3000);
+	}
 });
