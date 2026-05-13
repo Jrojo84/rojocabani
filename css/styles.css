@@ -529,8 +529,16 @@ body{
 
 .catalogo-grid .btn-whatsapp,
 .product-card .btn-whatsapp{
-    width:100%;
     margin-top:auto;
+}
+
+.product-card .btn-whatsapp{
+    width:auto;
+    align-self:center;
+    padding:8px 14px;
+    border-radius:6px;
+    font-size:0.9rem;
+    white-space:nowrap;
 }
 
 .catalogo-section{
@@ -889,7 +897,19 @@ body{
     }
     
     .home-productos .section-heading{
+        justify-content:center;
         padding:0 16px;
+    }
+
+    .home-productos .section-heading > div{
+        width:100%;
+        text-align:center;
+    }
+
+    .home-productos .section-heading h2{
+        font-size:2.5rem;
+        line-height:1.15;
+        white-space:normal;
     }
     
     .home-slider{
@@ -941,13 +961,13 @@ body{
     scroll-snap-type:x mandatory!important;
     scroll-behavior:smooth!important;
     padding:0 0 12px 0!important;
-    min-height:480px!important;
+    min-height:0!important;
     position:relative!important;
 }
 
 .home-productos .home-slider .product-card{
     scroll-snap-align:center;
-    min-height:420px;
+    min-height:0;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
@@ -962,9 +982,7 @@ body{
 }
 
 .slider-controls{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
+    display:none;
 }
 
 .slider-button{
@@ -999,10 +1017,12 @@ body{
     }
 
     .home-productos .home-slider .product-card{
-        min-height:380px;
+        min-height:0;
     }
 
     .home-productos .home-slider .product-card img{
         height:250px;
     }
 }
+
+
