@@ -44,6 +44,35 @@ document.addEventListener("DOMContentLoaded", () => {
 			});
 			currentIndex = closestIndex;
 		}, { passive: true });
+
+		// Autoplay cada 3 segundos
+		let autoplayInterval;
+		const startAutoplay = () => {
+			autoplayInterval = setInterval(() => {
+				goToCard(currentIndex + 1);
+			}, 3000);
+		};
+
+		const stopAutoplay = () => {
+			clearInterval(autoplayInterval);
+		};
+
+		slider.addEventListener("mouseenter", stopAutoplay);
+		slider.addEventListener("mouseleave", startAutoplay);
+		slider.addEventListener("touchstart", stopAutoplay);
+		slider.addEventListener("touchend", startAutoplay);
+
+		prevButton?.addEventListener("click", () => {
+			stopAutoplay();
+			setTimeout(startAutoplay, 5000);
+		});
+
+		nextButton?.addEventListener("click", () => {
+			stopAutoplay();
+			setTimeout(startAutoplay, 5000);
+		});
+
+		startAutoplay();
 	});
 
 });

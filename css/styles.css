@@ -931,24 +931,18 @@ body{
 ========================= */
 
 .home-productos .product-slider.home-slider{
-    width:100%;
-    position:static;
-    left:auto;
-    right:auto;
-    margin-left:0;
-    margin-right:0;
-    display:grid;
-    grid-auto-flow:column;
-    grid-auto-columns:minmax(320px, 1fr);
-    gap:18px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-    scrollbar-width:thin;
-    scrollbar-color:#8B0000 #f2f2f2;
-    visibility:visible;
-    opacity:1;
+    width:100%!important;
+    display:grid!important;
+    grid-auto-flow:column!important;
+    grid-auto-columns:minmax(320px, 1fr)!important;
+    gap:18px!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    scroll-snap-type:x mandatory!important;
+    scroll-behavior:smooth!important;
+    padding:0 0 12px 0!important;
+    min-height:480px!important;
+    position:relative!important;
 }
 
 .home-productos .home-slider .product-card{
@@ -974,22 +968,28 @@ body{
 }
 
 .slider-button{
-    width:40px;
-    height:40px;
+    width:45px;
+    height:45px;
     border:none;
-    border-radius:999px;
+    border-radius:50%;
     background:#8B0000;
     color:#fff;
-    font-size:1.4rem;
-    line-height:1;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     cursor:pointer;
+    transition:all 0.3s ease;
+    box-shadow:0 4px 12px rgba(139, 0, 0, 0.3);
 }
 
 .slider-button:hover{
     background:#b30000;
+    transform:scale(1.1);
+    box-shadow:0 6px 16px rgba(139, 0, 0, 0.4);
+}
+
+.slider-button:active{
+    transform:scale(0.95);
 }
 
 @media(max-width:700px){
