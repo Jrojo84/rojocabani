@@ -960,7 +960,7 @@ body{
     overflow-y:hidden!important;
     scroll-snap-type:x mandatory!important;
     scroll-behavior:smooth!important;
-    padding:0 clamp(15px, calc(50vw - 160px), 200px) 12px clamp(15px, calc(50vw - 160px), 200px)!important;
+    padding:0 0 12px 0!important;
     min-height:0!important;
     position:relative!important;
 }
@@ -1024,5 +1024,595 @@ body{
         height:250px;
     }
 }
+
+/* =============================
+   PÁGINA NOSOTROS - ESTILOS
+   ============================= */
+
+.nosotros-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nosotros-banner .banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.nosotros-banner .banner-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2;
+}
+
+.nosotros-banner .banner-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: white;
+}
+
+.nosotros-banner h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.nosotros-banner p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* QUIÉNES SOMOS */
+.nosotros-quienes-somos {
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.nosotros-quienes-somos .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.text-content h2 {
+    font-size: 2.8rem;
+    color: #8B0000;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.text-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.image-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-nosotros {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(139, 0, 0, 0.2));
+}
+
+/* HISTORIA - TIMELINE */
+.nosotros-historia {
+    padding: 80px 20px;
+    background: #f9f9f9;
+}
+
+.nosotros-historia .container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.nosotros-historia h2 {
+    font-size: 2.8rem;
+    color: #8B0000;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.historia-timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.historia-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #8B0000;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.timeline-item:nth-child(even) {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    direction: ltr;
+}
+
+.timeline-marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.marker-date {
+    position: relative;
+    z-index: 2;
+    background: #8B0000;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.2);
+}
+
+.timeline-content {
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #8B0000;
+}
+
+.timeline-content h3 {
+    color: #8B0000;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* VALORES */
+.nosotros-valores {
+    padding: 80px 20px;
+    background: white;
+}
+
+.nosotros-valores .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nosotros-valores h2 {
+    font-size: 2.8rem;
+    color: #8B0000;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.valor-card {
+    background: #fafafa;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 5px solid transparent;
+}
+
+.valor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(139, 0, 0, 0.15);
+    border-top-color: #8B0000;
+}
+
+.valor-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.valor-card h3 {
+    color: #8B0000;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.valor-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* TRABAJOS REALIZADOS */
+.nosotros-trabajos {
+    padding: 80px 20px;
+    background: #f9f9f9;
+}
+
+.nosotros-trabajos .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nosotros-trabajos h2 {
+    font-size: 2.8rem;
+    color: #8B0000;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.trabajos-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+.trabajos-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.trabajo-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.trabajo-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(139, 0, 0, 0.2);
+}
+
+.trabajo-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.trabajo-item h3 {
+    color: #8B0000;
+    padding: 20px 20px 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.trabajo-item p {
+    color: #666;
+    padding: 0 20px 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* CTA FINAL */
+.nosotros-cta {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #8B0000 0%, #b30000 100%);
+    color: white;
+    text-align: center;
+}
+
+.nosotros-cta .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nosotros-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.nosotros-cta p {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.nosotros-cta .btn-primary {
+    display: inline-block;
+    background: white;
+    color: #8B0000;
+    padding: 15px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+}
+
+.nosotros-cta .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVE - TABLET */
+@media(max-width: 900px) {
+    .nosotros-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .nosotros-banner p {
+        font-size: 1.1rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .valores-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .trabajos-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .historia-timeline::before {
+        left: 20px;
+        width: 2px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0;
+        margin-left: 60px;
+    }
+
+    .timeline-item:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        margin-left: 60px;
+    }
+
+    .timeline-marker {
+        display: none;
+    }
+
+    .marker-date {
+        display: none;
+    }
+
+    .timeline-content {
+        border-left: 5px solid #8B0000;
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .nosotros-quienes-somos,
+    .nosotros-historia,
+    .nosotros-valores,
+    .nosotros-trabajos,
+    .nosotros-cta {
+        padding: 60px 15px;
+    }
+
+    .nosotros-quienes-somos h2,
+    .nosotros-historia h2,
+    .nosotros-valores h2,
+    .nosotros-trabajos h2,
+    .nosotros-cta h2 {
+        font-size: 2.2rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+}
+
+/* RESPONSIVE - MOBILE */
+@media(max-width: 700px) {
+    .nosotros-banner {
+        height: 280px;
+    }
+
+    .nosotros-banner h1 {
+        font-size: 2rem;
+    }
+
+    .nosotros-banner p {
+        font-size: 1rem;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trabajos-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .work-item img {
+        height: 200px;
+    }
+
+    .nosotros-quienes-somos,
+    .nosotros-historia,
+    .nosotros-valores,
+    .nosotros-trabajos,
+    .nosotros-cta {
+        padding: 50px 15px;
+    }
+
+    .nosotros-quienes-somos h2,
+    .nosotros-historia h2,
+    .nosotros-valores h2,
+    .nosotros-trabajos h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-content p {
+        font-size: 0.95rem;
+    }
+
+    .timeline-marker {
+        display: none;
+    }
+
+    .historia-timeline::before {
+        left: 0;
+        width: 2px;
+    }
+
+    .timeline-content {
+        padding: 20px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .valor-card {
+        padding: 25px 20px;
+    }
+
+    .valor-icon {
+        font-size: 2.5rem;
+    }
+
+    .trabajo-item img {
+        height: 180px;
+    }
+
+    .nosotros-cta h2 {
+        font-size: 1.8rem;
+    }
+
+    .nosotros-cta p {
+        font-size: 1rem;
+    }
+
+    .nosotros-cta .btn-primary {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+@media(max-width: 460px) {
+    .nosotros-banner {
+        height: 220px;
+    }
+
+    .nosotros-banner h1 {
+        font-size: 1.5rem;
+    }
+
+    .nosotros-banner p {
+        font-size: 0.9rem;
+    }
+
+    .nosotros-quienes-somos,
+    .nosotros-historia,
+    .nosotros-valores,
+    .nosotros-trabajos,
+    .nosotros-cta {
+        padding: 40px 12px;
+    }
+
+    .nosotros-quienes-somos h2,
+    .nosotros-historia h2,
+    .nosotros-valores h2,
+    .nosotros-trabajos h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .text-content p {
+        font-size: 0.9rem;
+    }
+
+    .valor-icon {
+        font-size: 2rem;
+    }
+
+    .valor-card p {
+        font-size: 0.85rem;
+    }
+
+    .trabajo-item h3 {
+        font-size: 1rem;
+        padding: 15px 15px 8px;
+    }
+
+    .trabajo-item p {
+        font-size: 0.85rem;
+        padding: 0 15px 15px;
+    }
+
+    .nosotros-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .nosotros-cta p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .nosotros-cta .btn-primary {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
 
 
