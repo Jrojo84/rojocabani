@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const jsonPath = './products.json';
+  let basePath = window.location.hostname === 'jrojo84.github.io' ? '/rojocabani' : '';
+  const jsonPath = basePath + '/products.json';
 
   const normalize = (s) => s?.trim().toLowerCase();
 

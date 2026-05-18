@@ -184,6 +184,8 @@ body.page-home main{
     width:100%;
     display:block;
     max-height:100vh;
+    will-change:transform;
+    contain:layout style paint;
 }
 
 .hero-video{
@@ -194,6 +196,9 @@ body.page-home main{
     object-fit:contain;
     object-position:center center;
     display:block;
+    will-change:transform;
+    -webkit-backface-visibility:hidden;
+    backface-visibility:hidden;
 }
 
 body.page-home .hero-video-only{
