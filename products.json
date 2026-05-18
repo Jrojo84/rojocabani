@@ -1,0 +1,58 @@
+[
+  {
+    "id": "tazas",
+    "title": "Tazas Personalizadas",
+    "images": [
+      "images/productos/tazaPapa.jpg",
+      "images/productos/tazaPapa2.jpg",
+      "images/productos/tazaPapa3.jpg"
+    ],
+    "whatsapp": "https://wa.me/51939260711?text=Hola,%20quiero%20cotizar%20un%20pedido%20de%20tazas%20personalizadas%20en%20Rojo%20Cabani"
+  },
+  {
+    "id": "polos",
+    "title": "Polos Corporativos",
+    "images": [
+      "images/productos/poloPapa1.jpg",
+      "images/productos/poloPapa2.jpg",
+      "images/productos/poloPapa3.jpg"
+    ],
+    "whatsapp": "https://wa.me/51939260711?text=Hola,%20quiero%20cotizar%20un%20pedido%20de%20polos%20corporativos%20en%20Rojo%20Cabani"
+  },
+  {
+    "id": "almohadas",
+    "title": "Almohadas",
+    "images": [
+      "images/productos/almohadaPapa1.jpg",
+      "images/productos/almohadaPapa2.jpg"
+    ],
+    "whatsapp": "https://wa.me/51939260711?text=Hola,%20quiero%20cotizar%20un%20pedido%20de%20almohadas%20en%20Rojo%20Cabani"
+  },
+  {
+    "id": "tomatodos",
+    "title": "Tomatodos",
+    "images": [
+      "images/productos/tomatodo.jpg",
+      "images/productos/tomatodo-2.jpg"
+    ],
+    "whatsapp": "https://wa.me/51939260711?text=Hola,%20quiero%20cotizar%20un%20pedido%20de%20tomatodos%20en%20Rojo%20Cabani"
+  },
+  {
+    "id": "lapiceros",
+    "title": "Lapiceros",
+    "images": [
+      "images/productos/lapiceros.jpg",
+      "images/productos/lapiceros-2.jpg"
+    ],
+    "whatsapp": "https://wa.me/51939260711?text=Hola,%20quiero%20cotizar%20un%20pedido%20de%20lapiceros%20en%20Rojo%20Cabani"
+  },
+  {
+    "id": "vasos",
+    "title": "Vasos Personalizados",
+    "images": [
+      "images/productos/vasos.jpg",
+      "images/productos/vasos-2.jpg"
+    ],
+    "whatsapp": "https://wa.me/51939260711?text=Hola,%20quiero%20cotizar%20un%20pedido%20de%20vasos%20personalizados%20en%20Rojo%20Cabani"
+  }
+]

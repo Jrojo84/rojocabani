@@ -37,6 +37,23 @@ body{
     box-shadow:0 2px 10px rgba(0,0,0,0.2);
 }
 
+body.page-home .main-header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:transparent !important;
+    box-shadow:none;
+    transition:background 0.35s ease, box-shadow 0.35s ease;
+}
+
+body.page-home .main-header.is-scrolled{
+    background:linear-gradient(180deg, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.88) 100%) !important;
+    box-shadow:0 2px 18px rgba(0,0,0,0.55);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+}
+
 @media(max-width:700px){
     .main-header{
         padding:10px 12px;
@@ -150,6 +167,32 @@ body{
 
 .hero-home{
     position:relative;
+}
+
+.hero-video-only{
+    background:none;
+    padding:0;
+    overflow:hidden;
+}
+
+.hero-video{
+    width:100%;
+    min-height:100dvh;
+    height:100dvh;
+    object-fit:cover;
+    object-position:center center;
+    display:block;
+}
+
+body.page-home .hero-video-only{
+    min-height:100dvh;
+}
+
+@media(max-width:700px){
+    .hero-video{
+        height:100dvh;
+        min-height:100dvh;
+    }
 }
 
 .hero-content{

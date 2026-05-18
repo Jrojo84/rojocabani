@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body class="page-home">
 
     <!-- HEADER -->
     <div id="header-container"></div>
@@ -21,25 +21,11 @@
     <main>
 
         <!-- HERO -->
-        <section class="hero hero-home">
-            <div class="hero-content">
-                <span class="hero-kicker">Sublimación profesional</span>
-                <h1>ROJO CABANI</h1>
-                <p>
-                    Personalizamos productos para empresas, eventos y regalos
-                    con acabados cuidadosos y atención rápida.
-                </p>
-
-                <div class="hero-actions">
-                    <a class="btn-whatsapp"
-                       href="https://wa.me/51939260711?text=Hola,%20quiero%20cotizar%20un%20pedido%20con%20Rojo%20Cabani"
-                       target="_blank" rel="noopener">
-                       Cotizar por WhatsApp
-                    </a>
-
-                    <a class="btn-secondary" href="catalogo.html">Ver catálogo</a>
-                </div>
-            </div>
+        <section class="hero hero-home hero-video-only">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/banner/bannerprincipal.jpg">
+                <source src="images/banner/bannerPapa.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
         </section>
 
         <!-- PRODUCTOS -->
@@ -131,6 +117,7 @@
     <div id="footer-container"></div>
 
     <script src="js/header.js"></script>
+    <script src="js/catalogo-products.js"></script>
     <script src="js/main.js"></script>
 
 </body>

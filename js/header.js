@@ -12,6 +12,63 @@ function cargarComponentes() {
         .then(res => res.text())
         .then(data => {
             document.getElementById("header-container").innerHTML = data;
+
+            const header = document.querySelector('.main-header');
+            const isHomePage = document.body.classList.contains('page-home');
+
+            if (header && isHomePage) {
+                const updateHeaderState = () => {
+                    if (window.scrollY > 20) {
+                        header.classList.add('is-scrolled');
+                    } else {
+                        header.classList.remove('is-scrolled');
+                    }
+                };
+
+                updateHeaderState();
+                window.addEventListener('scroll', updateHeaderState, { passive: true });
+            }
+
+            const heroVideo = document.querySelector('.hero-video');
+            if (isHomePage && heroVideo) {
+                const startVideo = () => {
+                    heroVideo.muted = true;
+                    heroVideo.defaultMuted = true;
+                    heroVideo.autoplay = true;
+                    heroVideo.loop = true;
+                    heroVideo.playsInline = true;
+                    heroVideo.setAttribute('muted', '');
+                    heroVideo.setAttribute('autoplay', '');
+                    heroVideo.setAttribute('playsinline', '');
+                    heroVideo.setAttribute('webkit-playsinline', '');
+                    heroVideo.controls = false;
+                    heroVideo.load();
+
+                    const tryPlay = () => {
+                        const playAttempt = heroVideo.play();
+                        if (playAttempt && typeof playAttempt.catch === 'function') {
+                            playAttempt.catch(() => {
+                                setTimeout(() => {
+                                    heroVideo.play().catch(() => {});
+                                }, 250);
+                            });
+                        }
+                    };
+
+                    tryPlay();
+                    requestAnimationFrame(tryPlay);
+                    setTimeout(tryPlay, 300);
+                };
+
+                startVideo();
+
+                window.addEventListener('load', startVideo, { once: true });
+                document.addEventListener('visibilitychange', () => {
+                    if (!document.hidden) {
+                        startVideo();
+                    }
+                });
+            }
         });
 
     fetch(footerPath)
