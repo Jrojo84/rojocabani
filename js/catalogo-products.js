@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const jsonPath = '/products.json';
+  const jsonPath = './products.json';
 
   const normalize = (s) => s?.trim().toLowerCase();
 
