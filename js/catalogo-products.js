@@ -28,31 +28,40 @@ document.addEventListener('DOMContentLoaded', () => {
         if (product.whatsapp && linkEl) linkEl.href = product.whatsapp;
         imgs.slice(1).forEach(prefetchImage);
 
-        let hoverInterval = null;
+        let imageInterval = null;
         let currentIndex = 0;
 
-        const startCycle = () => {
+        // Iniciar ciclic automático de imágenes (3 segundos por imagen)
+        const autoStartCycle = () => {
           if (imgs.length <= 1) return;
-          if (hoverInterval) return;
-          hoverInterval = setInterval(() => {
+          if (imageInterval) return;
+          imageInterval = setInterval(() => {
             currentIndex = (currentIndex + 1) % imgs.length;
             imgEl.src = imgs[currentIndex];
-          }, 600);
+          }, 3000);
         };
 
-        const stopCycle = () => {
-          if (hoverInterval) {
-            clearInterval(hoverInterval);
-            hoverInterval = null;
-          }
-          currentIndex = 0;
-          imgEl.src = imgs[0];
+        // Iniciar el ciclic automático inmediatamente
+        autoStartCycle();
+
+        // En hover, acelerar el ciclic (para compatibilidad)
+        const startFastCycle = () => {
+          if (imageInterval) clearInterval(imageInterval);
+          imageInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % imgs.length;
+            imgEl.src = imgs[currentIndex];
+          }, 3000);
         };
 
-        card.addEventListener('mouseenter', startCycle);
-        card.addEventListener('mouseleave', stopCycle);
-        card.addEventListener('touchstart', startCycle);
-        card.addEventListener('touchend', stopCycle);
+        const resetToAutoSpeed = () => {
+          if (imageInterval) clearInterval(imageInterval);
+          autoStartCycle();
+        };
+
+        card.addEventListener('mouseenter', startFastCycle);
+        card.addEventListener('mouseleave', resetToAutoSpeed);
+        card.addEventListener('touchstart', startFastCycle);
+        card.addEventListener('touchend', resetToAutoSpeed);
 
         imgEl.addEventListener('error', () => {
           if (imgEl.dataset.fallback) return;

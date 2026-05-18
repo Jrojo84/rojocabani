@@ -31,52 +31,50 @@ function cargarComponentes() {
 
             const heroVideo = document.querySelector('.hero-video');
             if (isHomePage && heroVideo) {
+                // Asegurar que el video esté completamente configurado
+                heroVideo.muted = true;
+                heroVideo.defaultMuted = true;
+                heroVideo.autoplay = true;
+                heroVideo.loop = true;
+                heroVideo.playsInline = true;
+                heroVideo.controls = false;
+                heroVideo.volume = 0;
+                heroVideo.setAttribute('muted', '');
+                heroVideo.setAttribute('autoplay', '');
+                heroVideo.setAttribute('loop', '');
+                heroVideo.setAttribute('playsinline', '');
+                heroVideo.setAttribute('webkit-playsinline', '');
+                
                 const startVideo = () => {
-                    heroVideo.muted = true;
-                    heroVideo.defaultMuted = true;
-                    heroVideo.autoplay = true;
-                    heroVideo.loop = true;
-                    heroVideo.playsInline = true;
-                    heroVideo.setAttribute('muted', '');
-                    heroVideo.setAttribute('autoplay', '');
-                    heroVideo.setAttribute('playsinline', '');
-                    heroVideo.setAttribute('webkit-playsinline', '');
-                    heroVideo.controls = false;
-
-                    const tryPlay = () => {
-                        const playAttempt = heroVideo.play();
-                        if (playAttempt && typeof playAttempt.catch === 'function') {
-                            playAttempt.catch(err => {
-                                setTimeout(() => {
-                                    heroVideo.play().catch(() => {});
-                                }, 50);
-                            });
+                    const play = () => {
+                        const promise = heroVideo.play();
+                        if (promise !== undefined) {
+                            promise
+                                .then(() => {})
+                                .catch(() => {});
                         }
                     };
 
-                    tryPlay();
-                    requestAnimationFrame(tryPlay);
-                    setTimeout(tryPlay, 50);
-                    setTimeout(tryPlay, 200);
-                    setTimeout(tryPlay, 500);
+                    play();
+                    requestAnimationFrame(play);
+                    for (let i = 0; i < 10; i++) {
+                        setTimeout(play, i * 100);
+                    }
                 };
 
-                // Intenta reproducir apenas esté listo
-                if (heroVideo.readyState >= 3) {
-                    startVideo();
-                } else {
-                    heroVideo.addEventListener('canplay', startVideo, { once: true });
-                    heroVideo.addEventListener('loadedmetadata', startVideo, { once: true });
-                    heroVideo.addEventListener('loadeddata', startVideo, { once: true });
-                }
-
-                window.addEventListener('load', startVideo, { once: true });
+                // Reproducir apenas esté disponible
+                startVideo();
+                heroVideo.addEventListener('canplay', startVideo);
+                heroVideo.addEventListener('loadedmetadata', startVideo);
+                heroVideo.addEventListener('loadeddata', startVideo);
+                heroVideo.addEventListener('play', () => {});
+                window.addEventListener('load', startVideo);
                 document.addEventListener('visibilitychange', () => {
-                    if (!document.hidden) {
-                        startVideo();
-                    }
+                    if (!document.hidden) startVideo();
                 });
                 window.addEventListener('focus', startVideo);
+                document.addEventListener('click', startVideo);
+                document.addEventListener('touchstart', startVideo);
             }
         });
 
